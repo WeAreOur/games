@@ -1,0 +1,21 @@
+---
+import Layout from "../../../../layouts/Layout.astro";
+import { EchoGame } from "../../../../games/notation/echo";
+---
+
+<Layout title="Echo - Notation Game - WeAreOur">
+  <div class="game-page">
+    <EchoGame client:only="react" />
+  </div>
+</Layout>
+
+<style>
+  .game-page {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+  }
+</style>

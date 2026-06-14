@@ -1,0 +1,24 @@
+{
+  "name": "@weareour/games-platform",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Turn-based and real-time game platform",
+  "workspaces": [
+    "apps/web",
+    "packages/core",
+    "packages/games-sum"
+  ],
+  "scripts": {
+    "dev": "pnpm -r --parallel dev",
+    "build": "pnpm -r build",
+    "preview": "pnpm -w -C apps/web preview",
+    "type-check": "pnpm -r type-check"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  }
+}

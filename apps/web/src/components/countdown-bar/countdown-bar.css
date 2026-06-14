@@ -1,0 +1,9 @@
+.countdown-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  transition: width 0.05s linear;
+  width: 100%;
+}

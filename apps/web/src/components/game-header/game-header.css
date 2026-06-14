@@ -1,0 +1,54 @@
+.game-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  gap: 30px;
+  background: transparent;
+  margin-bottom: 10px;
+}
+
+.games-logo {
+  font-size: 28px;
+  font-weight: 800;
+  color: #333;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  letter-spacing: -1px;
+  min-width: 100px;
+}
+
+.games-logo:hover {
+  color: #667eea;
+  transform: scale(1.05);
+}
+
+.games-logo:active {
+  transform: scale(0.98);
+}
+
+.header-stats {
+  display: flex;
+  justify-content: flex-end;
+  gap: 30px;
+}
+
+.header-stat {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-weight: 700;
+  font-size: 16px;
+  color: #333;
+}
+
+.header-stat span {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 4px 12px;
+  border-radius: 20px;
+  min-width: 40px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}

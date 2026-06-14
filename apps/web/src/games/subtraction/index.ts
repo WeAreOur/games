@@ -1,0 +1,1 @@
+export { SubtractionGame } from "./subtraction";

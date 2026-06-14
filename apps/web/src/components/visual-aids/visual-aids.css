@@ -1,0 +1,147 @@
+.visual-aid-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+  min-height: 100px;
+}
+
+/* ===== DOTS ===== */
+.dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin: 8px;
+  transition: all 0.3s ease;
+}
+
+.dot.filled {
+  background-color: #3b82f6;
+  border: 2px solid #3b82f6;
+}
+
+.dot.filled.purple {
+  background-color: #a855f7;
+  border: 2px solid #a855f7;
+}
+
+.dot.outlined {
+  background-color: transparent;
+  border: 2px solid #d1d5db;
+}
+
+.dot.outlined.removed {
+  opacity: 0.5;
+  border-color: #ef4444;
+}
+
+/* ===== ADDITION ===== */
+.addition-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* ===== SUBTRACTION ===== */
+.subtraction-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ===== DOT GRID (used by Addition, Subtraction) ===== */
+.dot-grid {
+  display: grid;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===== MULTIPLICATION ===== */
+.multiplication-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.grid-dimensions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.dimension-label {
+  background-color: #f3f4f6;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+/* ===== DIVISION ===== */
+.division-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.groups-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.dot-group {
+  display: grid;
+  gap: 4px;
+  padding: 0.75rem;
+  background-color: #f9fafb;
+  border-radius: 8px;
+  border: 2px solid #e5e7eb;
+}
+
+.division-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.label-text {
+  font-weight: 600;
+  color: #374151;
+}
+
+.label-subtext {
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 640px) {
+  .dot {
+    width: 16px;
+    height: 16px;
+    margin: 4px;
+  }
+
+  .dot-grid {
+    gap: 4px;
+  }
+
+  .groups-container {
+    gap: 0.75rem;
+  }
+
+  .dot-group {
+    padding: 0.5rem;
+  }
+}

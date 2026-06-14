@@ -1,0 +1,50 @@
+.problem-display {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.equation {
+  font-size: 36px;
+  font-weight: 700;
+  font-family: "Courier New", monospace;
+  letter-spacing: 2px;
+  color: #333;
+  line-height: 1.4;
+}
+
+.part {
+  display: inline-block;
+}
+
+.part.missing {
+  color: #667eea;
+  font-weight: 900;
+}
+
+.part-operator {
+  margin: 0 4px;
+}
+
+.part-equals {
+  margin: 0 4px;
+}
+
+.answer-display {
+  min-height: 40px;
+  padding: 10px 20px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: #667eea;
+  font-family: "Courier New", monospace;
+  border: 1px solid #e0e0e0;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0.5; }
+  to { opacity: 1; }
+}

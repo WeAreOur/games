@@ -1,0 +1,41 @@
+---
+import MenuPageLayout from "../../layouts/MenuPageLayout.astro";
+import GameCard from "../../components/game-card.astro";
+---
+
+<MenuPageLayout 
+  title="Mathematics"
+  description="Master fundamental arithmetic operations"
+  backLink="/"
+  backLabel="← Back to Subjects"
+>
+  <GameCard
+    icon="➕"
+    title="Addition"
+    description="Find the missing digit in addition puzzles"
+    href="/maths/addition/"
+  />
+  
+  <GameCard
+    icon="➖"
+    title="Subtraction"
+    description="Find the result of subtraction problems"
+    href="/maths/subtraction/"
+  />
+  
+  <GameCard
+    icon="✖️"
+    title="Multiplication"
+    description="Solve multiplication facts quickly"
+    href="/maths/multiplication/"
+  />
+  
+  <GameCard
+    icon="➗"
+    title="Division"
+    description="Master division with exact results"
+    href="/maths/division/"
+  />
+  
+  <p slot="footer">More games coming soon!</p>
+</MenuPageLayout>

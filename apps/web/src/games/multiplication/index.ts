@@ -1,0 +1,1 @@
+export { MultiplicationGame } from "./multiplication";

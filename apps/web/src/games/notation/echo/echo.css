@@ -1,0 +1,159 @@
+.music-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.music-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  width: 100%;
+  max-width: 800px;
+}
+
+/* Hand Guides */
+.hand-guides {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  width: 100%;
+  max-width: 600px;
+}
+
+.hand-left,
+.hand-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  border-radius: 12px;
+  background: white;
+  border: 3px solid #e0e0e0;
+  transition: all 0.1s ease;
+  cursor: default;
+}
+
+.hand-left.active,
+.hand-right.active {
+  border-color: #667eea;
+  box-shadow: 0 0 20px rgba(102, 126, 234, 0.4);
+  transform: scale(1.05);
+}
+
+.hand-key {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.hand-label {
+  font-size: 0.9rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Phase Info */
+.phase-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  min-height: 200px;
+  justify-content: center;
+  width: 100%;
+}
+
+.phase-text {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.play-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.play-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.play-button:active {
+  transform: translateY(0);
+}
+
+/* Result Box */
+.result-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.result-score {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #667eea;
+}
+
+/* Level Info */
+.level-info {
+  display: flex;
+  gap: 2rem;
+  font-size: 1.1rem;
+  color: #666;
+}
+
+@media (max-width: 600px) {
+  .music-container {
+    padding: 1rem;
+  }
+
+  .music-content {
+    gap: 1.5rem;
+  }
+
+  .hand-guides {
+    gap: 1rem;
+  }
+
+  .hand-left,
+  .hand-right {
+    padding: 1.5rem;
+  }
+
+  .hand-key {
+    font-size: 2rem;
+  }
+
+  .play-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .result-score {
+    font-size: 2rem;
+  }
+}

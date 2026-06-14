@@ -1,0 +1,140 @@
+---
+import MenuPageLayout from "../layouts/MenuPageLayout.astro";
+import GameCard from "../components/game-card.astro";
+---
+
+<MenuPageLayout 
+  title="WeAreOur Games"
+  description="Brain training puzzles for everyone"
+  backLink={null}
+  showDashboard={false}
+>
+  <GameCard
+    icon="🔢"
+    title="Mathematics"
+    description="Master fundamental arithmetic operations"
+    href="/maths/"
+    buttonText="Explore"
+  />
+  
+  {/* <GameCard
+    icon="🎵"
+    title="Music"
+    description="Develop your musical skills and knowledge"
+    href="/music/"
+    buttonText="Explore"
+  /> */}
+  
+  <p slot="footer">More subjects coming soon!</p>
+</MenuPageLayout>
+
+<style>
+  .home-container {
+    padding: 40px 20px;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+    margin-bottom: 60px;
+    gap: 20px;
+  }
+
+  .header-content {
+    text-align: center;
+    flex: 1;
+  }
+
+  .header h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    letter-spacing: -1px;
+  }
+
+  .header p {
+    font-size: 18px;
+    opacity: 0.9;
+  }
+
+  .stats-link {
+    color: black;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.15);
+    font-weight: 600;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .stats-link:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+  }
+
+  .games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto 60px;
+  }
+
+  .game-card {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  .game-icon {
+    font-size: 64px;
+    margin-bottom: 20px;
+  }
+
+  .game-card h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+  .game-card p {
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+
+  .game-button {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 12px 32px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .game-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+  }
+
+  .footer {
+    text-align: center;
+    color: black;
+    opacity: 0.8;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+</style>

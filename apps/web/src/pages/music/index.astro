@@ -1,0 +1,21 @@
+---
+import MenuPageLayout from "../../layouts/MenuPageLayout.astro";
+import GameCard from "../../components/game-card.astro";
+---
+
+<MenuPageLayout 
+  title="Music"
+  description="Develop your musical skills and knowledge"
+  backLink="/"
+  backLabel="← Back to Subjects"
+>
+  <GameCard
+    icon="🎼"
+    title="Notation"
+    description="Learn to read and play musical notation"
+    href="/music/notation/"
+    buttonText="Explore"
+  />
+  
+  <p slot="footer">More music games coming soon!</p>
+</MenuPageLayout>

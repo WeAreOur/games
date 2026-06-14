@@ -1,6 +1,5 @@
 node_modules/
 dist/
-!apps/web/dist/
 .astro/
 .env
 .env.local

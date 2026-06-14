@@ -13,6 +13,8 @@ import { statsEngine } from "../../hooks/useStatsEngine";
 import { AdditionVisualAid } from "../../components/visual-aids";
 import "./addition.css";
 
+const GAME_NAME = "addition";
+
 // ==== GAME LOGIC ====
 
 interface Problem {
@@ -50,7 +52,7 @@ const validateAnswer = (userAnswer: string, problem: Problem): boolean => {
 // ==== COMPONENT ====
 
 export const AdditionGame: React.FC = () => {
-  const { state, addToScore, setStreak, setLevel, restart } = useGameEngine();
+  const { state, addToScore, setStreak, setLevel, restart } = useGameEngine(GAME_NAME);
 
   const [answer, setAnswer] = useState("");
   const [problem, setProblem] = useState<Problem | null>(null);
@@ -144,8 +146,7 @@ export const AdditionGame: React.FC = () => {
 
   return (
     <>
-      <GameHeader />
-      <GameFooter onRestart={handleRestart} onToggleNumpad={() => setShowNumpad(!showNumpad)} />
+      <GameHeader gameType={GAME_NAME} />
 
       <CenteredCardLayout>
         <CountdownBar onTimeout={handleTimeout} />
@@ -166,6 +167,7 @@ export const AdditionGame: React.FC = () => {
 
       <Confetti />
       <Toast />
+      <GameFooter onRestart={handleRestart} onToggleNumpad={() => setShowNumpad(!showNumpad)} />
     </>
   );
 };

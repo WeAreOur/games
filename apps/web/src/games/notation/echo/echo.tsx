@@ -8,6 +8,8 @@ import { GameHeader } from "../../../components/game-header";
 import { Confetti, triggerConfetti } from "../../../components/confetti";
 import { Toast, triggerToast } from "../../../components/toast/toast";
 
+const GAME_NAME = "echo";
+
 interface UserInput {
   input: 0 | 1;
   time: number;
@@ -15,7 +17,7 @@ interface UserInput {
 }
 
 export const EchoGame: React.FC = () => {
-  const { state } = useGameEngine();
+  const { state } = useGameEngine(GAME_NAME);
   const [patternString, setPatternString] = useState<string | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
@@ -227,7 +229,7 @@ export const EchoGame: React.FC = () => {
     <div>
       <Confetti />
       <Toast />
-      <GameHeader />
+      <GameHeader gameType={GAME_NAME} />
 
       <div style={{ padding: "2rem" }}>
         <h1 style={{ textAlign: "center", marginBottom: "2rem" }}>Echo Game</h1>

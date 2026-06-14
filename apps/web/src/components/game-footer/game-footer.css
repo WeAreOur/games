@@ -38,9 +38,13 @@
   box-shadow: 0 2px 6px rgba(255, 167, 38, 0.3);
 }
 
-/* Hide footer on mobile */
+/* Adjust footer on mobile */
 @media (max-width: 768px) {
   .game-footer {
+    position: static;
+  }
+
+  .toggle-numpad-btn {
     display: none;
   }
 }

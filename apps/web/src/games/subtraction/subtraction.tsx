@@ -13,6 +13,8 @@ import { statsEngine } from "../../hooks/useStatsEngine";
 import { SubtractionVisualAid } from "../../components/visual-aids";
 import "./subtraction.css";
 
+const GAME_NAME = "subtraction";
+
 // ==== GAME LOGIC ====
 
 interface Problem {
@@ -45,7 +47,7 @@ const validateAnswer = (userAnswer: string, problem: Problem): boolean => {
 // ==== COMPONENT ====
 
 export const SubtractionGame: React.FC = () => {
-  const { state, addToScore, setStreak, setLevel, restart } = useGameEngine();
+  const { state, addToScore, setStreak, setLevel, restart } = useGameEngine(GAME_NAME);
 
   const [answer, setAnswer] = useState("");
   const [problem, setProblem] = useState<Problem | null>(null);
@@ -139,8 +141,7 @@ export const SubtractionGame: React.FC = () => {
 
   return (
     <>
-      <GameHeader />
-      <GameFooter onRestart={handleRestart} onToggleNumpad={() => setShowNumpad(!showNumpad)} />
+      <GameHeader gameType={GAME_NAME} />
 
       <CenteredCardLayout>
         <CountdownBar onTimeout={handleTimeout} />
@@ -161,6 +162,7 @@ export const SubtractionGame: React.FC = () => {
 
       <Confetti />
       <Toast />
+      <GameFooter onRestart={handleRestart} onToggleNumpad={() => setShowNumpad(!showNumpad)} />
     </>
   );
 };

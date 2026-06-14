@@ -2,8 +2,12 @@ import React from "react";
 import { useGameEngine } from "../../hooks/useGameEngine";
 import "./game-header.css";
 
-export const GameHeader: React.FC = () => {
-  const { state } = useGameEngine();
+interface GameHeaderProps {
+  gameType: string;
+}
+
+export const GameHeader: React.FC<GameHeaderProps> = ({ gameType }) => {
+  const { state } = useGameEngine(gameType);
 
   return (
     <div className="game-header">

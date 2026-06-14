@@ -6,6 +6,7 @@ export default defineConfig({
   integrations: [react()],
   output: "static",
   vite: {
+    base: "/games/",
     ssr: {
       noExternal: ["@weareour/*"]
     }

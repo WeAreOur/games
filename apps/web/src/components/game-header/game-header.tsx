@@ -7,7 +7,7 @@ export const GameHeader: React.FC = () => {
 
   return (
     <div className="game-header">
-      <a href="/" className="games-logo">
+      <a href="/games/" className="games-logo">
         Games
       </a>
       <div className="header-stats">

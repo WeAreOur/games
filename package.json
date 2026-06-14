@@ -11,6 +11,7 @@
   "scripts": {
     "dev": "pnpm -r --parallel dev",
     "build": "pnpm -r build",
+    "postbuild": "rm -rf docs && mv apps/web/dist docs",
     "preview": "pnpm -w -C apps/web preview",
     "type-check": "pnpm -r type-check"
   },

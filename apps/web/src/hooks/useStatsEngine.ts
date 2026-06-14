@@ -18,26 +18,52 @@ export interface GameSession {
 
 class StatsEngineClass {
   private storageKey = "game_sessions";
+  private currentProblemStartTime: number = 0;
+  private currentGameName: string = "";
+  private currentProblem: string = "";
+
+  /**
+   * Start tracking a new problem
+   */
+  problemStart(gameName: string, problem: string): void {
+    this.currentGameName = gameName;
+    this.currentProblem = problem;
+    this.currentProblemStartTime = Date.now();
+  }
+
+  /**
+   * Get the elapsed time since problemStart was called
+   */
+  private getElapsedMs(): number {
+    if (this.currentProblemStartTime === 0) return 0;
+    return Date.now() - this.currentProblemStartTime;
+  }
 
   async recordSession(
     gameName: string,
     puzzle: string,
     answer: string,
     correct: boolean,
-    responseMs: number
+    responseMs?: number
   ): Promise<void> {
+    // Use elapsed time from problemStart if not explicitly provided
+    const finalResponseMs = responseMs ?? this.getElapsedMs();
+
     const session: GameSession = {
       timestamp: Date.now(),
       gameName,
       puzzle,
       answer,
       correct,
-      responseMs,
+      responseMs: finalResponseMs,
     };
 
     const sessions = this.getSessions();
     sessions.push(session);
     localStorage.setItem(this.storageKey, JSON.stringify(sessions));
+
+    // Reset timing
+    this.currentProblemStartTime = 0;
   }
 
   private getSessions(): GameSession[] {

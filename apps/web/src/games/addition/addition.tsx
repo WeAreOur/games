@@ -68,6 +68,7 @@ export const AdditionGame: React.FC = () => {
     const newProblem = generateProblem(state.level);
     setProblem(newProblem);
     setAnswer("");
+    statsEngine.problemStart(GAME_NAME, newProblem.problem);
     triggerTimeoutReset();
   }, [state.level]);
 
@@ -102,7 +103,7 @@ export const AdditionGame: React.FC = () => {
         setStreak(newLevel > state.level ? 0 : newStreak);
         setLevel(newLevel);
 
-        statsEngine.recordSession("Addition", problem.problem, newAnswer, isCorrect, 0);
+        statsEngine.recordSession(GAME_NAME, problem.problem, newAnswer, isCorrect);
 
         if (isCorrect) {
           triggerToast({ message: "✓ Correct!", type: "success" });

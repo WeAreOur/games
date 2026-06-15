@@ -1,6 +1,6 @@
 ---
 import "../styles/global.css";
-import { AnimatedBackground } from "../components/animated-background";
+import { AnimatedBackgroundSVG } from "../components/animated-background/AnimatedBackgroundSVG";
 
 interface Props {
   title?: string;
@@ -17,7 +17,7 @@ const { title } = Astro.props;
     <title>{title || "WeAreOur Games"}</title>
   </head>
   <body>
-    <AnimatedBackground client:load />
+    <AnimatedBackgroundSVG client:load />
     <main>
       <slot />
     </main>

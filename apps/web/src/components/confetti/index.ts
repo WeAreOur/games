@@ -1,1 +1,1 @@
-export { Confetti, triggerConfetti } from "./confetti";
+export { ConfettiSVG as Confetti, triggerConfetti } from "./confetti-svg";

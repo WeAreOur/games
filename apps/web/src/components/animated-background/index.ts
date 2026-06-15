@@ -1,1 +1,1 @@
-export { AnimatedBackground } from "./AnimatedBackground";
+export { AnimatedBackgroundSVG as AnimatedBackground } from "./AnimatedBackgroundSVG";
